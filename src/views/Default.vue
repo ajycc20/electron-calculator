@@ -117,17 +117,30 @@ export default {
       this.equation = this.equation + '* 0.01'
       this.calculate()
     },
-    // When pressed '<x'
-    calculateBackspace() {
-
-    },
     // When pressed '√'
     calculateRooting() {
-
+      // TODO: add rooting calculate
+      this.calculate()
+    },
+    // When pressed 'x²'
+    calculateSquare() {
+      // TODO: add squate calculate
+      this.calculate()
     },
     // When pressed '1/x'
     calculateReciprocal() {
+      // TODO: add reciprocal calculate
+      this.calculate()
+    },
+    // When pressed '<x'
+    calculateBackspace() {
+      this.$nextTick(() => {
+        if (this.equation === '') {
+          this.equation = '0'
+        }
+      })
 
+      this.equation = this.equation.slice(0, this.equation.length - 1)
     },
     // When pressed 'AC'
     clear() {
